@@ -22,19 +22,16 @@ document.querySelector('.go').addEventListener('click', function playGame() {
   button.innerHTML = "Button"+ i;
   button.id=i;
   div.appendChild(button);
-  console.log(button);}}
+  }}
  
   for (let i=0; i<guess;i++){
     array_btn[i]=i;
-    console.log(array_btn[i]);}
-    console.log('Length:' + (array_btn.length));
+    }
+   
     const randomBtn = array_btn[Math.floor(Math.random() * array_btn.length)];
-    console.log('teast',randomBtn,document.getElementById(parseInt(randomBtn)));
-  
+    
     createButtons();
 
-  
-  
   document.getElementById(parseInt(randomBtn)).addEventListener('click', function(){
      winMessage.removeAttribute("hidden");
      
@@ -52,12 +49,6 @@ document.querySelector('.go').addEventListener('click', function playGame() {
     while (div.hasChildNodes()) {
       div.removeChild(div.childNodes[0]);
     }
-    
-    
-   
-    
-    console.log('play agian');
-    
   });
 });
 
