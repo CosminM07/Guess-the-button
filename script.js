@@ -1,20 +1,16 @@
-var array_btn = []; 
-let startMessage = document.getElementById('startMessage');
-let winMessage = document.getElementById('winMessage');
-let lostMessage = document.getElementById('lostMessage');
-let playing =0;
-
-
-
-let div = document.getElementById('div');
-
-
+// Create a function for GO button
 document.querySelector('.go').addEventListener('click', function playGame() {
-  playing++;
-  if(playing === 1){
-  
+
+  var array_btn = []; 
+  let startMessage = document.getElementById('startMessage');
+  let winMessage = document.getElementById('winMessage');
+  let playing =0;
+  let div = document.getElementById('div');
   const guess = Number(document.querySelector('#number').value);
-  
+
+// Create buttons
+  playing++;
+  if(playing === 1){   
   startMessage.removeAttribute("hidden");
   function createButtons() {
   for(let i = 0; i<guess;i++){
@@ -23,25 +19,25 @@ document.querySelector('.go').addEventListener('click', function playGame() {
   button.id=i;
   div.appendChild(button);
   }}
- 
+  createButtons();
+
+// Make an extra array for random button 
   for (let i=0; i<guess;i++){
     array_btn[i]=i;
     }
-   
+// Random button
     const randomBtn = array_btn[Math.floor(Math.random() * array_btn.length)];
     
-    createButtons();
-
+// If you guess the button show the win message 
   document.getElementById(parseInt(randomBtn)).addEventListener('click', function(){
      winMessage.removeAttribute("hidden");
      
   });
 }
-
+// Make a function for the button PLAY AGAIN 
   document.querySelector('.playAgain').addEventListener('click', function() {
     playing=0;
     array_btn = [];
-    console.log(array_btn);
     startMessage.setAttribute("hidden", true);
     winMessage.setAttribute("hidden", true);
     document.getElementById('number').value = null;
@@ -51,6 +47,3 @@ document.querySelector('.go').addEventListener('click', function playGame() {
     }
   });
 });
-
-
-
