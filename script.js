@@ -1,49 +1,44 @@
-// Create a function for GO button
-document.querySelector('.go').addEventListener('click', function playGame() {
+let createButtons = 0;
 
-  var array_btn = []; 
+// Create a function for createButtons button
+document.querySelector('.createButtons').addEventListener('click', function playGame() {
+
   let startMessage = document.getElementById('startMessage');
   let winMessage = document.getElementById('winMessage');
-  let playing =0;
-  let div = document.getElementById('div');
+  let buttonsCreated = document.getElementById('buttonsCreated');
   const guess = Number(document.querySelector('#number').value);
+  
 
-// Create buttons
-  playing++;
-  if(playing === 1){   
-  startMessage.removeAttribute("hidden");
-  function createButtons() {
+// Create buttons 
+  if (createButtons === 0 && guess!== 0 ){
   for(let i = 0; i<guess;i++){
   const button = document.createElement("button");
   button.innerHTML = "Button"+ i;
   button.id=i;
-  div.appendChild(button);
-  }}
-  createButtons();
-
-// Make an extra array for random button 
-  for (let i=0; i<guess;i++){
-    array_btn[i]=i;
+  buttonsCreated.appendChild(button);
+  startMessage.removeAttribute("hidden");
     }
+    createButtons++;
+  
 // Random button
-    const randomBtn = array_btn[Math.floor(Math.random() * array_btn.length)];
+    const randomBtn = Math.floor(Math.random() * guess); 
     
 // If you guess the button show the win message 
   document.getElementById(parseInt(randomBtn)).addEventListener('click', function(){
      winMessage.removeAttribute("hidden");
-     
   });
-}
-// Make a function for the button PLAY AGAIN 
+  }
+
+// When the button PLAY AGAIN is clicked
   document.querySelector('.playAgain').addEventListener('click', function() {
-    playing=0;
-    array_btn = [];
+    createButtons = 0;
     startMessage.setAttribute("hidden", true);
     winMessage.setAttribute("hidden", true);
     document.getElementById('number').value = null;
-    var div=document.getElementById("div");
-    while (div.hasChildNodes()) {
-      div.removeChild(div.childNodes[0]);
+
+    var buttonsCreated=document.getElementById("buttonsCreated");
+    while (buttonsCreated.hasChildNodes()) {
+      buttonsCreated.removeChild(buttonsCreated.childNodes[0]);
     }
   });
 });
