@@ -36,9 +36,9 @@ document.querySelector('.createButtons').addEventListener('click', function play
     winMessage.setAttribute("hidden", true);
     document.getElementById('number').value = null;
 
-    var buttonsCreated=document.getElementById("buttonsCreated");
-    while (buttonsCreated.hasChildNodes()) {
-      buttonsCreated.removeChild(buttonsCreated.childNodes[0]);
+    var deleteButtons=document.getElementById("buttonsCreated");
+    while (deleteButtons.hasChildNodes()) {
+      deleteButtons.removeChild(deleteButtons.childNodes[0]);
     }
   });
 });
