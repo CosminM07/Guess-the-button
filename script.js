@@ -14,7 +14,7 @@ document.querySelector('.createButtons').addEventListener('click', function play
   for(let i = 0; i<guess;i++){
   const button = document.createElement("button");
   button.innerHTML = "Button"+ i;
-  button.id = i;
+  button.id=i;
   buttonsCreated.appendChild(button);
   startMessage.removeAttribute("hidden");
     }
@@ -36,7 +36,7 @@ document.querySelector('.createButtons').addEventListener('click', function play
     winMessage.setAttribute("hidden", true);
     document.getElementById('number').value = null;
 
-    var deleteButtons = document.getElementById("buttonsCreated");
+    var deleteButtons=document.getElementById("buttonsCreated");
     while (deleteButtons.hasChildNodes()) {
       deleteButtons.removeChild(deleteButtons.childNodes[0]);
     }

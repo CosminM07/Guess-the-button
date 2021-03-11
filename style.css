@@ -32,7 +32,7 @@ h1 {
   background: rgb(212, 212, 212);
 }
 
-.go {
+.createButtons {
   margin: 10px;
   background: #4caf50;
   border: none;
@@ -47,7 +47,7 @@ h1 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-.go:hover {
+.createButtons:hover {
   background: rgb(22, 233, 14);
 }
 
@@ -76,7 +76,7 @@ h1 {
   margin: 10px;
 }
 
-#div > * {
+#buttonsCreated > * {
   margin: 20px;
   background: tomato;
   padding: 25px;
@@ -87,6 +87,6 @@ h1 {
   font: arial;
 }
 
-#div > *:hover {
+#buttonsCreated > *:hover {
   background: rgb(224, 56, 26);
 }
