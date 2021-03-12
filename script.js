@@ -24,9 +24,9 @@ document.querySelector('.createButtons').addEventListener('click', function play
     const randomBtn = Math.floor(Math.random() * guess); 
     
 // If you guess the button show the win message 
-  document.getElementById(parseInt(randomBtn)).addEventListener('click', function(){
+    document.getElementById(parseInt(randomBtn)).addEventListener('click', function(){
      winMessage.removeAttribute("hidden");
-  });
+    });
   }
 
 // When the button PLAY AGAIN is clicked
