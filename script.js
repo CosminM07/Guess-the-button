@@ -7,29 +7,29 @@ document.querySelector('.createButtons').addEventListener('click', function play
   let winMessage = document.getElementById('winMessage');
   let buttonsCreated = document.getElementById('buttonsCreated');
   const guess = Number(document.querySelector('#number').value);
-  
 
-// Create buttons 
-  if (createButtons === 0 && guess !== 0 ){
-  for(let i = 0; i < guess; i++){
-  const button = document.createElement("button");
-  button.innerHTML = "Button"+ i;
-  button.id = i;
-  buttonsCreated.appendChild(button);
-  startMessage.removeAttribute("hidden");
+
+  // Create buttons 
+  if (createButtons === 0 && guess !== 0) {
+    for (let i = 0; i < guess; i++) {
+      const button = document.createElement("button");
+      button.innerHTML = "Button" + i;
+      button.id = i;
+      buttonsCreated.appendChild(button);
+      startMessage.removeAttribute("hidden");
     }
     createButtons++;
-  
-// Random button
-    const randomBtn = Math.floor(Math.random() * guess); 
-    
-// If you guess the button show the win message 
-    document.getElementById(parseInt(randomBtn)).addEventListener('click', function(){
-     winMessage.removeAttribute("hidden");
+
+    // Random button
+    const randomBtn = Math.floor(Math.random() * guess);
+
+    // If you guess the button show the win message 
+    document.getElementById(parseInt(randomBtn)).addEventListener('click', function() {
+      winMessage.removeAttribute("hidden");
     });
   }
 
-// When the button PLAY AGAIN is clicked
+  // When the button PLAY AGAIN is clicked
   document.querySelector('.playAgain').addEventListener('click', function() {
     createButtons = 0;
     startMessage.setAttribute("hidden", true);
